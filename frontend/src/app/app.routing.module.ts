@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: 'user/cirilo', component: PhotoListComponent },
+  { path: 'user/:userName', component: PhotoListComponent },
   { path: 'user/add', component: PhotoFormComponent },
   { path: '**', component: NotFoundComponent },
 ];
