@@ -3,5 +3,5 @@
     <input (keyup)='filter = $event.target.value' autofocus class='rounded' placeholder='search...' type='search'>
   </form>
 </div>
-
+{{filter}}
 <app-photos [photos]='photos'></app-photos>
