@@ -1,22 +1,33 @@
 <h4 class='text-center'>Login</h4>
 
-<form class='form mt-4'>
+<form [formGroup]='loginForm' class='form mt-4'>
 
   <div class='form-group'>
     <input
       autofocus
       class='form-control'
+      formControlName='userName'
       placeholder='user name'>
+    <app-message
+      *ngIf='loginForm.get("userName").errors?.required'
+      text='User Name is required!'>
+    </app-message>
   </div>
 
   <div class='form-group'>
     <input
       class='form-control'
+      formControlName='password'
       placeholder='password'
       type='password'>
+    <app-message
+      *ngIf='loginForm.get("password").errors?.required'
+      text='Password is required!'>
+    </app-message>
   </div>
 
   <button
+    [disabled]='loginForm.invalid'
     class='btn btn-primary btn-block'
     type='submit'>
     login
