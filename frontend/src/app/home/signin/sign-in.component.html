@@ -1,13 +1,13 @@
 <h4 class='text-center'>Login</h4>
 
-<form [formGroup]='loginForm' class='form mt-4' (submit)='login()'>
+<form (submit)='login()' [formGroup]='loginForm' class='form mt-4'>
 
   <div class='form-group'>
-    <input
-      autofocus
-      class='form-control'
-      formControlName='userName'
-      placeholder='user name'>
+    <input #userNameInput
+           autofocus
+           class='form-control'
+           formControlName='userName'
+           placeholder='user name'>
     <app-message
       *ngIf='loginForm.get("userName").errors?.required'
       text='User Name is required!'>
