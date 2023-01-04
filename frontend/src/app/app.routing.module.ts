@@ -5,9 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { SignInComponent } from './home/signin/sign-in.component';
+import { AuthGuard } from './core/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: SignInComponent },
+  {
+    path: '',
+    component: SignInComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'user/:userName',
     component: PhotoListComponent,
