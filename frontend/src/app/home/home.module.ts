@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MessageModule } from '../shared/components/message/message.module';
 import { RouterModule } from '@angular/router';
-import { SignupComponent } from './signup/signup.component';
+import { SignUpComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [SignInComponent, SignupComponent],
+  declarations: [SignInComponent, SignUpComponent],
   imports: [
     ReactiveFormsModule,
     FormsModule,
