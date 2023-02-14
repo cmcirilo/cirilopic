@@ -5,7 +5,8 @@
         <button (click)='fileInput.click()' class='btn btn-primary' type='button'>
           <i class='fa fa-image fa-4x align-middle'></i>
         </button>
-        <input #fileInput (change)='handleFile($event.target.files[0])' accept='image/*' formControlName='file' hidden
+        <input #fileInput (change)='handleFile($event.target.files[0])' accept='image/*' formControlName='file'
+               hidden immediateClick
                type='file'>
         <app-message *ngIf="photoForm.get('file').errors?.required" text='Please, select photo'></app-message>
       </div>
