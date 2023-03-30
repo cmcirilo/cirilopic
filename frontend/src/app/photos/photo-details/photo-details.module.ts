@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { PhotoModule } from '../photo/photo.module';
 import { PhotoCommentsComponent } from './photo-comments/photo-comments.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageModule } from '../../shared/components/message/message.module';
 
 @NgModule({
   declarations: [PhotoDetailsComponent, PhotoCommentsComponent],
   exports: [PhotoDetailsComponent, PhotoCommentsComponent],
-  imports: [CommonModule, PhotoModule, RouterModule],
+  imports: [CommonModule, PhotoModule, RouterModule, ReactiveFormsModule, MessageModule],
 })
 export class PhotoDetailsModule {
 
