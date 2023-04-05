@@ -31,7 +31,9 @@ export class AlertComponent {
 
   getAlertClass(alert: Alert) {
 
-    if (!alert) return '';
+    if (!alert) {
+      return '';
+    }
 
     switch (alert.alertType) {
 
