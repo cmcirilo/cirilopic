@@ -1,10 +1,10 @@
 export class Alert {
 
-  constructor(private readonly alertType: AlertType, private readonly message: string) {
+  constructor(public readonly alertType: AlertType, public readonly message: string) {
   }
 }
 
 export enum AlertType {
 
-  SUCESS, WARNING, DANGER, INFO
+  SUCCESS, WARNING, DANGER, INFO
 }
