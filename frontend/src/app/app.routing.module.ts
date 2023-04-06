@@ -24,7 +24,8 @@ const routes: Routes = [
   },
   { path: 'photo/add', component: PhotoFormComponent, canActivate: [AuthGuard] },
   { path: 'photo/:photoId', component: PhotoDetailsComponent },
-  { path: '**', component: NotFoundComponent }];
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)], exports: [RouterModule],
