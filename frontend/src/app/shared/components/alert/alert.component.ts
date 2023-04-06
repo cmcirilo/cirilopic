@@ -9,7 +9,7 @@ import { AlertService } from './alert.service';
 export class AlertComponent {
 
   @Input() timeout = 3000;
-  alerts: Alert[];
+  alerts: Alert[] = [];
 
   constructor(private alertService: AlertService) {
 
