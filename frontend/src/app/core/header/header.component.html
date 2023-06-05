@@ -1,6 +1,15 @@
 <header class='fixed-top'>
   <nav class='navbar navbar-light bg-white'>
-    <a class='navbar-brand'>CIRILOPIC</a>
+    <a class='navbar-brand'>
+      <i (click)='menu.toggle()' class='fa fa-bars mr-2'></i>
+      CIRILOPIC
+    </a>
+    <app-menu #menu>
+      <ul>
+        <li>Menu item 1</li>
+        <li>Menu item 2</li>
+      </ul>
+    </app-menu>
     <div *ngIf='(user$ | async) as user; else login'>
       <i class='fa fa-user-circle mr-1'></i>
       <a class='mr-1'>{{user.name}}</a>
