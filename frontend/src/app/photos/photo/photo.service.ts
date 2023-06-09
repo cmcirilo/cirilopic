@@ -14,14 +14,14 @@ export class PhotoService {
   }
 
   listFromUser(userName: string) {
-    return this.httpClient.get<Photo[]>(API + '/' + userName + '/photosx');
+    return this.httpClient.get<Photo[]>(API + '/' + userName + '/photos');
   }
 
   listFromUserPaginated(userName: string, page: number) {
     const params = new HttpParams()
       .append('page', page.toString());
 
-    return this.httpClient.get<Photo[]>(API + '/' + userName + '/photosx', { params });
+    return this.httpClient.get<Photo[]>(API + '/' + userName + '/photos', { params });
   }
 
   upload(description: string, allowComments: boolean, file: File) {
