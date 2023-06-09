@@ -6,6 +6,7 @@ import { NewUser } from './new-user';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
 import { SignUpService } from './sign-up.service';
+import { userNamePasswordValidator } from './user-name-password.validator';
 
 @Component({
   templateUrl: './sign-up.component.html',
@@ -29,6 +30,8 @@ export class SignUpComponent implements OnInit {
       fullName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
       userName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(40), lowerCaseValidator], this.userNotTakenValidatorService.checkUserNameTaken()],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(14)]],
+    }, {
+      validator: userNamePasswordValidator,
     });
 
     this.platformDetectorService.isPlatformBrowser() && this.inputEmail.nativeElement.focus();
